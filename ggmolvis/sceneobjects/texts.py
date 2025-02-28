@@ -17,7 +17,8 @@ class Text(SceneObject):
                  scale=None,
                  color="black",
                  material="default",
-                 style: str = "default"):
+                 style: str = "default",
+                 lens: float = 24.0):
         """
         Parameters
         ----------
@@ -30,6 +31,7 @@ class Text(SceneObject):
         self.location = location
         self.rotation = rotation
         self.text_size = text_size
+        self.lens = lens
 
         super().__init__(
             name=name,
@@ -39,6 +41,7 @@ class Text(SceneObject):
             color=color,
             material=material,
             style=style,
+            lens=lens,
         )
 
     def _text_creator(self):
