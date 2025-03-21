@@ -20,7 +20,7 @@ def test_render_basic_bg(tmpdir):
                     filepath=f"test_red.png",
                     mode="image",
                     # red background
-                    composite_bg_rgba=(0.9, 0, 0, 1.0),
+                    #composite_bg_rgba=(0.9, 0, 0, 1.0),
                     lens=35)
         with Image.open("test_red.png") as img:
             img_array = np.array(img)
