@@ -11,7 +11,6 @@ import numpy as np
 def test_render_basic_bg(tmpdir):
     # confirm correct propagation of background color
     # and image size specified
-    bpy.context.scene.render.engine = 'CYCLES'
     ggmv = GGMolVis()
     u = mda.Universe(GRO)
     mol = ggmv.molecule(u.atoms)
