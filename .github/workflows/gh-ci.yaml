@@ -20,7 +20,7 @@ defaults:
 
 jobs:
   main-tests:
-    if: github.repository == 'yuxuanzhuang/ggmolvis'
+    #if: github.repository == 'yuxuanzhuang/ggmolvis'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -85,7 +85,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -n 2 -v --cov=ggmolvis --cov-report=xml --color=yes ggmolvis/tests/ || true
+          pytest -n 2 -v --cov=ggmolvis --durations=10 --cov-report=xml --color=yes ggmolvis/tests/ || true
           exit_code=$?
           if [ $exit_code -eq 139 ]; then
               echo "Segmentation fault occurred. Ignoring and continuing CI."
@@ -106,7 +106,7 @@ jobs:
           fail_ci_if_error: true
 
   pylint_check:
-    if: "github.repository == 'yuxuanzhuang/ggmolvis'"
+    #if: "github.repository == 'yuxuanzhuang/ggmolvis'"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
